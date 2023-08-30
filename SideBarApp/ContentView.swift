@@ -9,19 +9,29 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var selectedUserId: Int?
     @EnvironmentObject var stateController: StateController
     
     var body: some View {
         NavigationSplitView {
-            List {
+            List(selection: $selectedUserId) {
                 ForEach(stateController.users) { user in
                     Text(user.username ?? "")
                 }
             }
-        } content: {
-          // Sub menu
         } detail: {
-          // Detail view for each of the sub-menu item
+            if let selectedUserId, let user = stateController.users.first(where: {$0.id == selectedUserId}) {
+                Group {
+                    Text(user.name ?? "")
+                    Text(user.username ?? "")
+                    Text(user.website ?? "")
+                    Text(user.email ?? "")
+                }.padding()
+                    .background(.pink)
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                    .blendMode(.colorBurn)
+                
+            }
         }
     }
 }
