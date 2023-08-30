@@ -22,10 +22,8 @@ class WebService: Codable {
             guard let url = URL(string: fromURL) else { throw NetworkError.badUrl }
             let (data, response) = try await URLSession.shared.data(from: url)
             guard let response = response as? HTTPURLResponse else { throw NetworkError.badResponse }
-            print(response)
-            print(String(bytes: data, encoding: String.Encoding.utf8)!)
+
             guard response.statusCode >= 200 && response.statusCode < 300 else { throw NetworkError.badStatus }
-            
             
             let decodedResponse = try JSONDecoder().decode(T.self, from: data)
             
@@ -36,8 +34,6 @@ class WebService: Codable {
             print("Did not get a valid response")
         } catch NetworkError.badStatus {
             print("Did not get a 2xx status code from the response")
-        } catch NetworkError.failedToDecodeResponse {
-            print("Failed to decode response into the given type")
         } catch {
             print("An error occured downloading the data: \(error)")
         }
@@ -51,5 +47,4 @@ enum NetworkError: Error {
     case invalidRequest
     case badResponse
     case badStatus
-    case failedToDecodeResponse
 }

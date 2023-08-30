@@ -23,13 +23,8 @@ class StateController: ObservableObject {
     init() {}
     
     func setup() async {
-        do {
-            let loadedUsers = try await storageController.fetchUser()
-            self.users = loadedUsers
-            print(self.users.count)
-        } catch {
-            print(error)
-
-        }
+        let loadedUsers = await storageController.fetchUser()
+        self.users = loadedUsers
+        print(self.users.count)
     }
 }
