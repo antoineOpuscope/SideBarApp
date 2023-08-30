@@ -9,10 +9,11 @@ import Foundation
 
 class User: Identifiable, Codable {
     var id: Int
-    var username: String
-    var email: String
-    var address: Address
-    var phone: String
-    var website: String
-    var company: Company
+    var name: String?
+    var username: String?
+    var email: String?
+    var address: Address?
+    var phone: String?
+    var website: String?
+    var company: Company?
 }

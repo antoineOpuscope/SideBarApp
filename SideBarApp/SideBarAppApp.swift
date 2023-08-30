@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct SideBarAppApp: App {
+    
+    @StateObject private var stateController: StateController = StateController()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .task {
+                    await stateController.setup()
+                }
+                .environmentObject(stateController)
+            
         }
     }
 }

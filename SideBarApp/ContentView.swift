@@ -8,17 +8,41 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var stateController: StateController
+    
     var body: some View {
-        NavigationView {
-          List {
-            Label("About", systemImage: "info.circle")
-            Label("Settings", systemImage: "gear")
-          }
-          .listStyle(SidebarListStyle())
+        NavigationSplitView {
+            List {
+                ForEach(stateController.users) { user in
+                    Text(user.username ?? "")
+                }
+            }
+        } content: {
+          // Sub menu
+        } detail: {
+          // Detail view for each of the sub-menu item
         }
     }
 }
 
-#Preview {
-    ContentView()
+
+struct ContentView_Previews: PreviewProvider {
+    struct Preview: View {
+        
+        @StateObject var stateController = StateController()
+
+        var body: some View {
+            ContentView()
+                .environmentObject(stateController)
+                .task {
+                    await stateController.setup()
+                }
+        }
+    }
+
+    static var previews: some View {
+        Preview()
+    }
 }
+

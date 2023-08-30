@@ -16,10 +16,20 @@
 		1160868A2A9F357A00CDAACA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116086892A9F357A00CDAACA /* User.swift */; };
 		1160868C2A9F371200CDAACA /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160868B2A9F371200CDAACA /* Address.swift */; };
 		1160868E2A9F373C00CDAACA /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160868D2A9F373C00CDAACA /* Company.swift */; };
-		116086912A9F39C700CDAACA /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 116086902A9F39C700CDAACA /* RxBlocking */; };
-		116086932A9F39C700CDAACA /* RxBlocking-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 116086922A9F39C700CDAACA /* RxBlocking-Dynamic */; };
-		116086952A9F39C700CDAACA /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 116086942A9F39C700CDAACA /* RxRelay */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		116086A12A9F41F600CDAACA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1160866F2A9E4AAF00CDAACA /* SideBarApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideBarApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,9 +50,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				116086952A9F39C700CDAACA /* RxRelay in Frameworks */,
-				116086912A9F39C700CDAACA /* RxBlocking in Frameworks */,
-				116086932A9F39C700CDAACA /* RxBlocking-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +139,7 @@
 				1160866B2A9E4AAF00CDAACA /* Sources */,
 				1160866C2A9E4AAF00CDAACA /* Frameworks */,
 				1160866D2A9E4AAF00CDAACA /* Resources */,
+				116086A12A9F41F600CDAACA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,9 +147,6 @@
 			);
 			name = SideBarApp;
 			packageProductDependencies = (
-				116086902A9F39C700CDAACA /* RxBlocking */,
-				116086922A9F39C700CDAACA /* RxBlocking-Dynamic */,
-				116086942A9F39C700CDAACA /* RxRelay */,
 			);
 			productName = SideBarApp;
 			productReference = 1160866F2A9E4AAF00CDAACA /* SideBarApp.app */;
@@ -418,24 +423,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		116086902A9F39C700CDAACA /* RxBlocking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1160868F2A9F39C700CDAACA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxBlocking;
-		};
-		116086922A9F39C700CDAACA /* RxBlocking-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1160868F2A9F39C700CDAACA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxBlocking-Dynamic";
-		};
-		116086942A9F39C700CDAACA /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1160868F2A9F39C700CDAACA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 116086672A9E4AAF00CDAACA /* Project object */;
 }
