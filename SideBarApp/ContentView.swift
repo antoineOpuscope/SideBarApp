@@ -45,8 +45,10 @@ struct ContentView_Previews: PreviewProvider {
         var body: some View {
             ContentView()
                 .environmentObject(stateController)
-                .task {
-                    await stateController.setup()
+                .onAppear {
+                    Task {
+                        await stateController.setup()
+                    }
                 }
         }
     }
