@@ -52,6 +52,10 @@
 		116086712A9E4AAF00CDAACA /* SideBarApp */ = {
 			isa = PBXGroup;
 			children = (
+				116086842A9F33B500CDAACA /* ViewModel */,
+				116086832A9F33AF00CDAACA /* Utils */,
+				116086822A9F33AB00CDAACA /* Model */,
+				116086812A9F33A400CDAACA /* View */,
 				116086722A9E4AAF00CDAACA /* SideBarAppApp.swift */,
 				116086742A9E4AAF00CDAACA /* ContentView.swift */,
 				116086762A9E4AB100CDAACA /* Assets.xcassets */,
@@ -67,6 +71,34 @@
 				116086792A9E4AB100CDAACA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		116086812A9F33A400CDAACA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		116086822A9F33AB00CDAACA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		116086832A9F33AF00CDAACA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		116086842A9F33B500CDAACA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
