@@ -15,9 +15,14 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView {
             List(selection: $selectedUserId) {
-                ForEach(stateController.users) { user in
-                    Text(user.username ?? "")
+                Section {
+                    ForEach(stateController.users) { user in
+                        Text(user.username ?? "")
+                    }
+                } header: {
+                    Label("Users", systemImage: "person")
                 }
+                
             }
         } detail: {
             if let selectedUserId, let user = stateController.users.first(where: {$0.id == selectedUserId}) {
